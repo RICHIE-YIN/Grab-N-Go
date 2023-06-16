@@ -40,12 +40,12 @@
                 <input type="number" class="form-control" id="price" name="price" step="0.01" value="{{listing.price}}">
             </div>
             <div class="form-group">
-                <label for="itemcondition">Condition</label>
-                <select class="form-control" id="itemcondition" name="itemcondition">
-                    <option {% if listing.itemcondition == 'New' %}selected{% endif %}>New</option>
-                    <option {% if listing.itemcondition == 'Used' %}selected{% endif %}>Used</option>
-                    <option {% if listing.itemcondition == 'Refurbished' %}selected{% endif %}>Refurbished</option>
-                    <option {% if listing.itemcondition == 'Other' %}selected{% endif %}>Other</option>
+                <label for="condition">Condition</label>
+                <select class="form-control" id="condition" name="condition">
+                    <option {% if listing.condition == 'New' %}selected{% endif %}>New</option>
+                    <option {% if listing.condition == 'Used' %}selected{% endif %}>Used</option>
+                    <option {% if listing.condition == 'Refurbished' %}selected{% endif %}>Refurbished</option>
+                    <option {% if listing.condition == 'Other' %}selected{% endif %}>Other</option>
                 </select>
             </div>
             <div class="form-group">

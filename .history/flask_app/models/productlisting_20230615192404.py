@@ -25,7 +25,7 @@ class ProductListing:
 
     @classmethod
     def save(cls, data, image_data):
-        query = "INSERT INTO productlisting (title, description, price, itemcondition, category, location, zip, city, state, status, user_id, images) VALUES (%%(title)s, %%(description)s, %%(price)s, %%(itemcondition)s, %%(category)s, %%(location)s, %%(zip)s, %%(city)s, %%(state)s, %%(status)s, %%(user_id)s, %%(images)s)"
+        query = "INSERT INTO productlisting (title, description, price, `itemcondition`, category, location, zip, city, state, status, user_id, images) VALUES (%%(title)s, %%(description)s, %%(price)s, %%(itemcondition)s, %%(category)s, %%(location)s, %%(zip)s, %%(city)s, %%(state)s, %%(status)s, %%(user_id)s, %%(images)s)"
         data['images'] = image_data
         return connectToMySQL(DATABASE).query_db(query, data)
     

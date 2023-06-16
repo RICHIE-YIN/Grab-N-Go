@@ -11,7 +11,7 @@ class ProductListing:
         self.title = data['title']
         self.description = data['description']
         self.price = data['price']
-        self.itemcondition = data['itemcondition']
+        self.condition = data['condition']
         self.category = data['category']
         self.location = data['location']
         self.zip = data['zip']
@@ -25,7 +25,7 @@ class ProductListing:
 
     @classmethod
     def save(cls, data, image_data):
-        query = "INSERT INTO productlisting (title, description, price, itemcondition, category, location, zip, city, state, status, user_id, images) VALUES (%%(title)s, %%(description)s, %%(price)s, %%(itemcondition)s, %%(category)s, %%(location)s, %%(zip)s, %%(city)s, %%(state)s, %%(status)s, %%(user_id)s, %%(images)s)"
+        query = "INSERT INTO productlisting (title, description, price, `condition`, category, location, zip, city, state, status, user_id, images) VALUES (%%(title)s, %%(description)s, %%(price)s, %%(condition)s, %%(category)s, %%(location)s, %%(zip)s, %%(city)s, %%(state)s, %%(status)s, %%(user_id)s, %%(images)s)"
         data['images'] = image_data
         return connectToMySQL(DATABASE).query_db(query, data)
     
@@ -67,7 +67,7 @@ class ProductListing:
 
     @classmethod
     def update(cls, data, image_data=None):
-        query = "UPDATE productlisting SET title=%%(title)s, description=%%(description)s, price=%%(price)s, `itemcondition`=%%(itemcondition)s, category=%%(category)s, location=%%(location)s, zip=%%(zip)s, city=%%(city)s, state=%%(state)s, updated_at=NOW()"
+        query = "UPDATE productlisting SET title=%%(title)s, description=%%(description)s, price=%%(price)s, `condition`=%%(condition)s, category=%%(category)s, location=%%(location)s, zip=%%(zip)s, city=%%(city)s, state=%%(state)s, updated_at=NOW()"
         
         if image_data:
             query += ", images=%%(images)s"

@@ -30,13 +30,13 @@ def create_listing():
         "title": request.form['title'],
         "description": request.form['description'],
         "price": float(request.form['price']),
-        "itemcondition": request.form['itemcondition'],
+        "condition": request.form['condition'],
         "category": request.form['category'],
         "location": request.form['location'],
         "zip": request.form['zip'],
         "city": request.form['city'],
         "state": request.form['state'],
-        "status": "available",
+        "status": "active",
         "user_id": session['user_id']
     }
 
@@ -84,7 +84,7 @@ def update_listing():
         "title": request.form['title'],
         "description": request.form['description'],
         "price": float(request.form['price']),
-        "itemcondition": request.form['itemcondition'],
+        "condition": request.form['condition'],
         "category": request.form['category'],
         "location": request.form['location'],
         "zip": request.form['zip'],

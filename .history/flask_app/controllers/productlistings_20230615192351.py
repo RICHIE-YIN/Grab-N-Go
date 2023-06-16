@@ -36,7 +36,7 @@ def create_listing():
         "zip": request.form['zip'],
         "city": request.form['city'],
         "state": request.form['state'],
-        "status": "available",
+        "status": "active",
         "user_id": session['user_id']
     }
 
